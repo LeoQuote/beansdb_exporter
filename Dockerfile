@@ -11,6 +11,6 @@ ENV GOPATH=/go
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO111MODULE=off go build -v -a -ldflags "-s -w" -o /go/bin/beanstalkd_exporter .
 
 FROM scratch
-COPY --from=build-env /go/bin/beanstalkd_exporter /usr/bin/beanstalkd_exporter
+COPY --from=build-env /go/bin/beansdb_exporter /usr/bin/beansdb_exporter
 ENTRYPOINT ["beansdb_exporter"]
 CMD ["-beansdb.address", "localhost:11211"]
