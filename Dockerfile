@@ -3,8 +3,8 @@ FROM golang:alpine as build-env
 RUN apk add git
 
 # Copy source + vendor
-COPY . /go/src/github.com/messagebird/beansdb_exporter
-WORKDIR /go/src/github.com/messagebird/beansdb_exporter
+COPY . /go/src/github.com/leoquote/beansdb_exporter
+WORKDIR /go/src/github.com/leoquote/beansdb_exporter
 
 # Build
 ENV GOPATH=/go
